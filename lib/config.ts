@@ -1,8 +1,8 @@
 export const siteConfig = {
-  organizationName: "[Organization Name]",
-  founderName: "[Your Name]",
-  jobTitle: "Corporate Banking Officer & Digital Growth Consultant",
-  yearsOfExperience: "[Years of Experience]",
+  organizationName: "Manjushree Finance Limited",
+  founderName: "MANJUSHREE",
+  jobTitle: "Corporate Banking & Digital Growth Consultant",
+  yearsOfExperience: "[20 years +]",
   qualifications: "[Professional Qualifications]",
   certifications: "[Certifications]",
   email: "[Email Address]",
