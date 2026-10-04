@@ -63,3 +63,34 @@ body::selection{background:#ffd5ce;color:var(--navy)}
 .not-found>div>span{color:#ff8c78}
 .site-footer{background:#102f5a}
 .footer-grid h3{color:#ff9d8d}
+
+/* Product catalogue */
+.product-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.home-product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.product-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(49,95,161,.13)}
+.product-card-image{height:190px;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:18px}
+.product-card-image span{color:#fff;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+.product-card-body{padding:26px;display:flex;flex-direction:column;flex:1}
+.product-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.product-card h2{font-size:1.45rem;margin-bottom:12px}.product-card p{font-size:.9rem}
+.product-card a{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:22px;color:var(--blue);font-size:.85rem;font-weight:800}
+.mini-tags{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 18px}.mini-tags span{padding:6px 9px;border-radius:100px;background:#eef3f9;color:#31527f;font-size:.69rem;font-weight:750}
+.product-hero-grid{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:center}.product-hero-image{position:relative;height:330px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:0 24px 55px rgba(9,35,68,.28)}.product-hero-image img{object-fit:cover}
+.product-detail-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:90px;align-items:start}
+.product-facts{position:sticky;top:110px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}.product-facts>span{display:block;padding:18px 20px;background:var(--blue);color:#fff;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:800}.product-facts>div{display:grid;gap:3px;padding:16px 20px;border-bottom:1px solid var(--line)}.product-facts>div:last-child{border-bottom:0}.product-facts small{color:var(--muted);font-size:.72rem}.product-facts strong{font-size:.86rem}
+.product-highlight-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:52px}.product-highlight-list div{display:flex;align-items:center;gap:9px;background:#eef3f9;border-radius:8px;padding:14px;font-size:.85rem;font-weight:750}.product-highlight-list svg,.check-list svg{width:17px;flex:0 0 auto;color:var(--teal)}
+.product-prose section{padding-bottom:42px;margin-bottom:42px;border-bottom:1px solid var(--line)}.check-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}.check-list li{display:flex;gap:9px;color:#52657a}
+.rate-table{border:1px solid var(--line);border-radius:10px;overflow:hidden}.rate-row{display:grid;grid-template-columns:1.35fr 1fr .65fr;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:.86rem}.rate-row:last-child{border-bottom:0}.rate-head{background:var(--blue);color:#fff;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.rate-note{font-size:.78rem!important;margin-top:12px}.source-link a{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:800}.source-link svg{width:16px}
+.banking-cta .consultation-action{gap:12px}.banking-cta .text-link{justify-content:center}
+@media(max-width:1000px){.home-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-hero-grid,.product-detail-layout{grid-template-columns:1fr;gap:45px}.product-facts{position:static}.product-hero-image{height:300px}}
+@media(max-width:700px){.product-card-grid,.home-product-grid,.product-highlight-list,.check-list{grid-template-columns:1fr}.product-card-image{height:175px}.rate-row{grid-template-columns:1.1fr .9fr .6fr;gap:8px;padding:12px 10px;font-size:.75rem}.rate-head{font-size:.63rem}.product-hero-image{height:230px}}
+
+.savings-highlight{background:linear-gradient(135deg,#edf3fb,#fff5f2)}.savings-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}.savings-layout h2{margin-bottom:20px}.home-rate-table{background:#fff;box-shadow:0 20px 50px rgba(49,95,161,.1)}
+.vcc-highlight{background:linear-gradient(135deg,#173f78,#315fa1);color:#fff}.vcc-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:75px;align-items:center}.vcc-image{position:relative;height:390px;border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.25)}.vcc-image img{object-fit:cover}.vcc-grid h2{margin-bottom:20px}.vcc-grid>div:last-child>p:not(.eyebrow){color:#d4dfec}.vcc-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0}.vcc-facts div{padding:16px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.07)}.vcc-facts span,.vcc-facts strong{display:block}.vcc-facts span{font-size:.7rem;color:#c4d3e3;text-transform:uppercase;letter-spacing:.08em}.vcc-facts strong{font-size:1.08rem;margin-top:3px}
+.banking-service-grid article{min-height:235px}.banking-service-grid svg{margin-bottom:32px}.center-link{display:flex;justify-content:center;margin-top:34px}
+.account-opening-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}.compact-process{grid-template-columns:repeat(4,1fr);margin-top:45px}.compact-process::before{left:6%;right:6%}.account-opening-card{padding:42px;border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:12px;background:#fff;box-shadow:0 22px 50px rgba(49,95,161,.11)}.account-opening-card>svg{width:40px;height:40px;color:var(--blue);margin-bottom:34px}.account-opening-card>span{display:block;color:var(--teal);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.13em}.account-opening-card h3{font-size:1.75rem;margin:12px 0}.account-opening-card .button{margin-top:10px}
+@media(max-width:1000px){.savings-layout,.vcc-grid,.account-opening-grid{grid-template-columns:1fr}.vcc-image{height:340px}.compact-process{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.vcc-image{height:245px}.vcc-facts,.compact-process{grid-template-columns:1fr 1fr}.account-opening-card{padding:28px}}
+.about-photo{position:relative;height:540px;border-radius:12px;overflow:hidden}.about-photo img{object-fit:cover;object-position:center}
+@media(max-width:700px){.about-photo{height:340px}}

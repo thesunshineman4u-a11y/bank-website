@@ -1,5 +1,5 @@
 export type AnalyticsEvent =
-  | "consultation_cta_click"
+  | "account_opening_click"
   | "contact_form_start"
   | "contact_form_submit"
   | "service_view"
