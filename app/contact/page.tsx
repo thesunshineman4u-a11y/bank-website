@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import { CalendarCheck, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
+import { PageHero } from "@/components/ui-elements";
+import { hasBookingUrl, siteConfig } from "@/lib/config";
+
+export const metadata: Metadata = { title: "Contact", description: "Book a free consultation about AI-powered digital marketing, customer acquisition, and business growth." };
+export default function ContactPage(){return <><PageHero eyebrow="Contact" title="Let’s talk about growing your business." copy="Choose a free consultation for a focused strategy conversation, or send a detailed message so we can understand your priorities."/><section className="section" id="consultation"><div className="container contact-layout"><aside className="contact-sidebar"><div className="contact-path primary"><CalendarCheck/><p className="eyebrow light">Primary path</p><h2>Book a free consultation</h2><p>We’ll review your business, products, customers, current marketing, and growth priorities.</p>{hasBookingUrl?<a className="button button-light" href={siteConfig.bookingUrl} target="_blank" rel="noreferrer">Open booking calendar</a>:<div className="integration-note">Booking integration coming soon. Complete the form and select your preferred contact method.</div>}</div><div className="contact-details"><h3>Contact details</h3><span><Mail/>{siteConfig.email}</span><span><Phone/>{siteConfig.phone}</span><span><MapPin/>{siteConfig.location}</span><p><ShieldCheck/>Your information will only be used to respond to your enquiry. Replace the placeholder policy with legal counsel-approved language before launch.</p></div></aside><div><p className="eyebrow">Send a message</p><h2>Tell us where you want to grow.</h2><p className="form-intro">The more context you share, the more useful our first conversation can be.</p><ContactForm/></div></div></section></>}
+
