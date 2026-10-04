@@ -10,7 +10,7 @@ export const siteConfig = {
   location: "Nepal",
   linkedin: "[LinkedIn URL]",
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://banking-ai-growth-nepal.bold-frost-1160.chatgpt.site",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://banking-ai-growth-nepal.aktarul7331400.chatgpt.site",
   positioning: "Banking Insight. AI-Powered Marketing. Measurable Growth.",
 } as const;
 
