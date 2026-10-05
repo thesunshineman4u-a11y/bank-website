@@ -24,6 +24,7 @@ export type Product = {
   summary: string;
   image: string;
   imageAlt: string;
+  cardImagePosition?: string;
   highlights: string[];
   sections: ProductSection[];
   facts?: { label: string; value: string }[];
@@ -49,6 +50,7 @@ export const products: Product[] = [
     summary: "Accounts for everyday banking, premium customers, women, children, salaried professionals, and remittance recipients.",
     image: "/product-savings.webp",
     imageAlt: "Secure savings and deposit banking represented by a rising financial path",
+    cardImagePosition: "68% 52%",
     highlights: ["Six account choices", "Quarterly interest payment", "Online account opening", "Options with zero minimum balance"],
     sections: [
       { title: "Choose an account that fits", body: "The savings portfolio is designed around different life stages and banking needs. Premium Saving supports higher-value relationships, Nari Saving is designed for women, Children Saving helps families build an early saving habit, and Naulo Remit Saving serves customers receiving money from abroad." },
@@ -71,6 +73,7 @@ export const products: Product[] = [
     summary: "Build savings over a chosen period with multiple tenors and flexible interest-payment options.",
     image: "/product-savings.webp",
     imageAlt: "Long-term deposit growth represented by illuminated financial milestones",
+    cardImagePosition: "68% 52%",
     highlights: ["Starts from NPR 10,000", "Multiple tenor choices", "Different interest-payment options", "For individuals and institutions"],
     sections: [
       { title: "Save with a defined term", body: "Fixed deposits are available from NPR 10,000 and let customers select from available tenors and interest-payment options based on their saving plan." },
@@ -92,6 +95,7 @@ export const products: Product[] = [
     summary: "Secure everyday access through a chip-enabled debit card, plus a Virtual Credit Card for digital payments.",
     image: "/product-vcc.webp",
     imageAlt: "Secure digital payment card technology",
+    cardImagePosition: "67% 44%",
     highlights: ["Chip-enabled debit card", "SCT/UnionPay network", "Virtual Credit Card", "EMI options for VCC"],
     sections: [
       { title: "Debit Card", body: "The Manjushree debit card is chip-enabled and operates through SCT Network and UnionPay. Customers can make withdrawals and balance enquiries without charge at SCT/UnionPay member-bank ATMs nationwide.", items: ["Secure chip-enabled card", "Cash withdrawal and balance enquiry", "Merchant and digital-wallet transactions", "Nationwide SCT/UnionPay access"] },
@@ -115,6 +119,7 @@ export const products: Product[] = [
     summary: "Access payments, transfers, alerts, support, and everyday banking from the Manjushree Smart platform.",
     image: "/product-mobile-banking.webp",
     imageAlt: "Mobile banking and secure digital account access",
+    cardImagePosition: "50% 46%",
     highlights: ["24/7 banking access", "Real-time alerts", "Cross-bank transfers", "In-app support"],
     sections: [
       { title: "Banking in your hand", body: "Manjushree Smart brings essential banking services into one digital experience with secure payments, integrated services, customer support, and continuous access." },
@@ -136,6 +141,7 @@ export const products: Product[] = [
     summary: "Accept interoperable digital payments through Fonepay QR and NEPALPAY QR with transaction confirmation and settlement support.",
     image: "/product-merchant-qr.webp",
     imageAlt: "Merchant accepting a secure QR payment",
+    cardImagePosition: "50% 46%",
     highlights: ["Fonepay QR", "NEPALPAY QR", "Static and dynamic QR", "UPI acceptance for Indian visitors"],
     sections: [
       { title: "One merchant solution, broader acceptance", body: "Manjushree supports both NEPALPAY QR and Fonepay QR so merchants can accept secure and interoperable payments from a wide customer base." },
