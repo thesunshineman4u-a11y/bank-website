@@ -48,9 +48,9 @@ export const products: Product[] = [
     shortTitle: "Savings",
     category: "Savings & Deposits",
     summary: "Accounts for everyday banking, premium customers, women, children, salaried professionals, and remittance recipients.",
-    image: "/product-savings.webp",
-    imageAlt: "Secure savings and deposit banking represented by a rising financial path",
-    cardImagePosition: "68% 52%",
+    image: "/premium-savings-official.webp",
+    imageAlt: "Manjushree Premium Savings Account customers planning their finances together",
+    cardImagePosition: "center",
     highlights: ["Six account choices", "Quarterly interest payment", "Online account opening", "Options with zero minimum balance"],
     sections: [
       { title: "Choose an account that fits", body: "The savings portfolio is designed around different life stages and banking needs. Premium Saving supports higher-value relationships, Nari Saving is designed for women, Children Saving helps families build an early saving habit, and Naulo Remit Saving serves customers receiving money from abroad." },

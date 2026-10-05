@@ -3,6 +3,9 @@ export type Article = {
   category: string;
   title: string;
   excerpt: string;
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
   date: string;
   readingTime: string;
   featured?: boolean;
@@ -15,6 +18,9 @@ export const articles: Article[] = [
     category: "Savings",
     title: "How to Choose the Right Manjushree Savings Account",
     excerpt: "Compare minimum balances, customer segments, interest, and practical account benefits before you apply.",
+    image: "/premium-savings-official.webp",
+    imageAlt: "Manjushree Premium Savings Account customers reviewing their savings plan",
+    imagePosition: "center",
     date: "October 3, 2026",
     readingTime: "5 min read",
     featured: true,
@@ -28,6 +34,9 @@ export const articles: Article[] = [
     category: "Cards",
     title: "A Practical Guide to the Manjushree Virtual Credit Card",
     excerpt: "Understand digital payments, published fees, monthly interest, limits, and EMI choices before using a VCC.",
+    image: "/fonepay-vcc-offer.jpeg",
+    imageAlt: "Manjushree Fonepay Virtual Credit Card cashback offer",
+    imagePosition: "center 42%",
     date: "September 25, 2026",
     readingTime: "6 min read",
     sections: [
@@ -41,6 +50,9 @@ export const articles: Article[] = [
     category: "Merchant Banking",
     title: "Accepting Payments with Manjushree Merchant QR",
     excerpt: "How Fonepay QR and NEPALPAY QR support secure, interoperable payments for merchants.",
+    image: "/product-merchant-qr.webp",
+    imageAlt: "Merchant accepting a secure QR payment",
+    imagePosition: "center 46%",
     date: "September 14, 2026",
     readingTime: "4 min read",
     sections: [
@@ -53,6 +65,9 @@ export const articles: Article[] = [
     category: "Digital Banking",
     title: "Everyday Banking with Manjushree Smart",
     excerpt: "Use alerts, payments, transfers, integrations, and support through one digital banking experience.",
+    image: "/product-mobile-banking.webp",
+    imageAlt: "Manjushree Smart mobile banking experience",
+    imagePosition: "center 46%",
     date: "August 28, 2026",
     readingTime: "5 min read",
     sections: [
@@ -65,6 +80,9 @@ export const articles: Article[] = [
     category: "Account Opening",
     title: "Documents for Online Account Opening",
     excerpt: "A simple checklist for Nepalese citizens, minors, and Non-Resident Nepalese applying online.",
+    image: "/customer-conversation.png",
+    imageAlt: "A Manjushree Finance representative helping customers understand account requirements",
+    imagePosition: "center",
     date: "August 12, 2026",
     readingTime: "4 min read",
     sections: [
@@ -78,6 +96,9 @@ export const articles: Article[] = [
     category: "Remittance",
     title: "Using Manjushree's Remittance Partner Network",
     excerpt: "Access domestic and international remittance services through multiple listed partners and branches.",
+    image: "/product-remittance.webp",
+    imageAlt: "Connected remittance services across regions",
+    imagePosition: "center",
     date: "July 30, 2026",
     readingTime: "4 min read",
     sections: [

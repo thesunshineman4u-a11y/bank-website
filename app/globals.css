@@ -126,3 +126,13 @@ body::selection{background:#ffd5ce;color:var(--navy)}
 /* Consistent product-card image crops */
 .product-card-image{height:auto;aspect-ratio:16/9;background-repeat:no-repeat}
 .product-hero-image{height:auto;aspect-ratio:16/9}
+
+/* Editorial imagery for the Insights page */
+.featured-art{justify-content:flex-end;background:var(--navy)}
+.featured-art::before{inset:0;width:auto;height:auto;border:0;border-radius:0;right:0;top:0;box-shadow:none;background:linear-gradient(180deg,transparent 42%,rgba(6,22,45,.88));z-index:1}
+.featured-art>img{object-fit:cover}
+.featured-art>span{position:relative;z-index:2}
+.article-art{position:relative;height:auto;aspect-ratio:16/9;overflow:hidden;background:var(--navy);background-image:none}
+.article-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,22,45,.82))}
+.article-art img{object-fit:cover}
+.article-art span{position:relative;z-index:1;font-weight:800}
