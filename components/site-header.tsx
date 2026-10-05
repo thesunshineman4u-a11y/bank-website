@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -27,7 +28,9 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container nav-wrap">
         <Link href="/" className="brand" aria-label={`${siteConfig.organizationName} home`}>
-          <span className="brand-mark" aria-hidden="true"><span /></span>
+          <span className="brand-logo-mark" aria-hidden="true">
+            <Image src="/manjushree-mark.png" alt="" width={52} height={52} priority />
+          </span>
           <span><strong>{siteConfig.organizationName}</strong><small>Your trusted financial partner</small></span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 
@@ -10,7 +11,12 @@ export function SiteFooter() {
       </div>
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Link href="/" className="brand brand-inverse"><span className="brand-mark"><span /></span><strong>{siteConfig.organizationName}</strong></Link>
+          <Link href="/" className="brand brand-inverse">
+            <span className="brand-logo-mark" aria-hidden="true">
+              <Image src="/manjushree-mark.png" alt="" width={52} height={52} />
+            </span>
+            <strong>{siteConfig.organizationName}</strong>
+          </Link>
           <p>Savings, cards, digital payments, remittance, transfers, and essential banking services for customers across Nepal.</p>
         </div>
         <div><h3>Navigate</h3><Link href="/">Home</Link><Link href="/about">About Us</Link><Link href="/products">Products</Link><Link href="/blog">Insights</Link><Link href="/contact">Contact</Link></div>
