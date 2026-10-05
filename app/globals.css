@@ -115,3 +115,10 @@ body::selection{background:#ffd5ce;color:var(--navy)}
 .consultation-action small,
 .not-found>div>span,
 .footer-grid h3{color:#fff}
+
+/* Fonepay VCC promotional artwork */
+.vcc-offer-art{height:520px;background:#eef6fc}
+.vcc-offer-art img{object-fit:contain}
+.vcc-grid>div:last-child>p.vcc-offer-note{margin:-14px 0 24px;color:#c4d3e3;font-size:.72rem;line-height:1.55}
+@media(max-width:1000px){.vcc-offer-art{height:480px}}
+@media(max-width:700px){.vcc-offer-art{height:400px}}
