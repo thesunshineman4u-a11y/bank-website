@@ -125,3 +125,4 @@ body::selection{background:#ffd5ce;color:var(--navy)}
 
 /* Consistent product-card image crops */
 .product-card-image{height:auto;aspect-ratio:16/9;background-repeat:no-repeat}
+.product-hero-image{height:auto;aspect-ratio:16/9}

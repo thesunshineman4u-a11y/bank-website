@@ -24,7 +24,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   return <>
     <section className="detail-hero product-detail-hero"><div className="container">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: product.shortTitle }]} />
-      <div className="product-hero-grid"><div className="detail-title"><Icon /><p className="eyebrow light">{product.category}</p><h1>{product.title}</h1><p>{product.summary}</p></div><div className="product-hero-image"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 900px) 100vw, 42vw" /></div></div>
+      <div className="product-hero-grid"><div className="detail-title"><Icon /><p className="eyebrow light">{product.category}</p><h1>{product.title}</h1><p>{product.summary}</p></div><div className="product-hero-image"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 900px) 100vw, 42vw" style={{ objectPosition: product.cardImagePosition ?? "center" }} /></div></div>
     </div></section>
     <section className="section"><div className="container product-detail-layout">
       <aside className="product-facts"><span>At a glance</span>{product.facts?.map((fact) => <div key={fact.label}><small>{fact.label}</small><strong>{fact.value}</strong></div>)}</aside>
