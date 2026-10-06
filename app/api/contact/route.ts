@@ -82,6 +82,8 @@ export async function POST(request: Request) {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Origin: "https://banking-ai-growth-nepal.aktarul7331400.chatgpt.site",
+        Referer: CONTACT_PAGE_URL,
       },
       body: JSON.stringify(formSubmitPayload),
     });
