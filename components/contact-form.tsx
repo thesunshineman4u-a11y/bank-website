@@ -9,7 +9,7 @@ const goals = ["Open a Savings Account", "Place a Fixed Deposit", "Debit Card Su
 const products = ["Savings Accounts", "Fixed Deposit", "Debit Card", "Virtual Credit Card", "Manjushree Smart", "Merchant QR", "Remittance", "ConnectIPS / IPS / RTGS", "DEMAT / C-ASBA", "Safe-Deposit Locker"];
 
 export function ContactForm() {
-  const [state, setState] = useState<"idle" | "sending" | "sent" | "not-configured" | "error">("idle");
+  const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -22,8 +22,10 @@ export function ContactForm() {
       const result = await response.json() as { delivered?: boolean; message?: string };
       if (!response.ok) throw new Error(result.message || "Please review the form and try again.");
       setMessage(result.message || "Thank you. We have received your banking enquiry and will contact you shortly.");
-      setState(result.delivered ? "sent" : "not-configured");
-      if (result.delivered) { trackEvent("contact_form_submit"); form.reset(); }
+      if (!result.delivered) throw new Error(result.message || "We could not deliver your message.");
+      setState("sent");
+      trackEvent("contact_form_submit");
+      form.reset();
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
       setState("error");
@@ -50,7 +52,6 @@ export function ContactForm() {
       <label>Message *<textarea name="message" rows={5} required minLength={20} placeholder="Describe the product or support you need. Do not include passwords, PINs, OTPs, or full card details." /></label>
       <fieldset><legend>Preferred contact method</legend><div className="radio-row"><label><input type="radio" name="contactMethod" value="Email" defaultChecked />Email</label><label><input type="radio" name="contactMethod" value="Phone" />Phone</label><label><input type="radio" name="contactMethod" value="WhatsApp" />WhatsApp</label></div></fieldset>
       <label className="consent"><input type="checkbox" name="consent" required />I consent to being contacted about this banking enquiry. *</label>
-      {state === "not-configured" && <div className="form-note" role="status">{message}</div>}
       {state === "error" && <div className="form-error" role="alert">{message}</div>}
       <button className="button" type="submit" disabled={state === "sending"}>{state === "sending" ? "Submitting…" : <>Submit banking enquiry <Send size={17} /></>}</button>
     </form>
