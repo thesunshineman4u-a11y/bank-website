@@ -16,13 +16,21 @@ export function ContactForm() {
     event.preventDefault();
     setState("sending");
     const form = event.currentTarget;
-    const payload = Object.fromEntries(new FormData(form));
+    if (!form.reportValidity()) {
+      setState("idle");
+      return;
+    }
+    const formData = new FormData(form);
+    const payload: Record<string, FormDataEntryValue | FormDataEntryValue[]> = Object.fromEntries(formData);
+    payload.services = formData.getAll("services");
     try {
       const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-      const result = await response.json() as { delivered?: boolean; message?: string };
-      if (!response.ok) throw new Error(result.message || "Please review the form and try again.");
+      const result = await response.json().catch(() => null) as { accepted?: boolean; message?: string; reference?: string } | null;
+      const reference = result?.reference ? ` Reference: ${result.reference}` : "";
+      if (!response.ok || !result?.accepted) {
+        throw new Error(`${result?.message || "Please review the form and try again."}${reference}`);
+      }
       setMessage(result.message || "Thank you. We have received your banking enquiry and will contact you shortly.");
-      if (!result.delivered) throw new Error(result.message || "We could not deliver your message.");
       setState("sent");
       trackEvent("contact_form_submit");
       form.reset();

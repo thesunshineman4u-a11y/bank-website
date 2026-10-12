@@ -1,5 +1,7 @@
 import vinext from "vinext";
+import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import hostingConfig from "./.openai/hosting.json";
 import { readExecutionProfile } from "./scripts/execution-profile.mjs";
 import { sites } from "./build/sites-vite-plugin";
@@ -13,6 +15,7 @@ const { d1, r2 } = hostingConfig;
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 const managedLinux = readExecutionProfile() === "managed-linux";
+const isVercel = process.env.VERCEL === "1" || process.env.NITRO_PRESET === "vercel";
 
 const localBindingConfig = {
   main: "./build/sites-worker.ts",
@@ -37,6 +40,22 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async ({ command }) => {
+  const server = {
+    ...(managedLinux
+      ? { host: "0.0.0.0", allowedHosts: ["terminal.local"] }
+      : {}),
+    ...(isCodexSeatbeltSandbox
+      ? { watch: { useFsEvents: false, usePolling: true } }
+      : {}),
+  };
+
+  if (isVercel) {
+    return {
+      server,
+      plugins: [vinext(), tailwindcss(), nitro()],
+    };
+  }
+
   // Use Miniflare's local Request.cf placeholder unless fetching is requested.
   process.env.CLOUDFLARE_CF_FETCH_ENABLED ??= "false";
   process.env.WRANGLER_SEND_METRICS ??= "false";
@@ -52,16 +71,10 @@ export default defineConfig(async ({ command }) => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
-    server: {
-      ...(managedLinux
-        ? { host: "0.0.0.0", allowedHosts: ["terminal.local"] }
-        : {}),
-      ...(isCodexSeatbeltSandbox
-        ? { watch: { useFsEvents: false, usePolling: true } }
-        : {}),
-    },
+    server,
     plugins: [
       vinext(),
+      nitro(),
       sites({ mockAuth: !managedLinux }),
       connectorPreview(),
       cloudflare({
